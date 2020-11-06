@@ -62,7 +62,7 @@ export default class App extends React.Component {
     const { loading, error, location, weather, temperature } = this.state;
 
     return (
-      <KeyboardAvoidingView style={styles.container}>
+      <KeyboardAvoidingView  behavior={Platform.OS == "ios" ? "padding" : ""} style={styles.container}>
         <StatusBar barStyle="light-content" />
         <ImageBackground
           source={getImageForWeather(weather)}
